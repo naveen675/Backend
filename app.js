@@ -6,7 +6,7 @@ const hello = require('./components/hello');
 const app = express();
 const {readFileSync, writeFileSync} = require('fs');
 
-const write = writeFileSync('./components/file.txt',"hellow file has written");
+const write = writeFileSync('./components/file.txt',`hellow file has written ${hello.func1(names.naveen)}`);
 
 const read = readFileSync('./components/file.txt','utf8');
 
