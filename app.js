@@ -1,13 +1,13 @@
-express = require('express')
-const app = express()
-const port = process.env.PORT || 3000;
+express = require('express');
+const os = require('os');
+const path = require('path');
+const names = require('./components/names');
+const hello = require('./components/hello');
+const app = express();
+const {readFileSync, writeFileSync} = require('fs');
 
-console.log(__dirname)
-app.get('/', (req,res) => {
-    
-    res.send("hello world")
-})
+const write = writeFileSync('./components/file.txt',"hellow file has written");
 
-app.listen(port, () => {
-    console.log(`Server listening at port: ${port}`)
-  });
+const read = readFileSync('./components/file.txt','utf8');
+
+console.log(read);
